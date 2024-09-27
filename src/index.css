@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .custom-cursor {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><circle cx="8" cy="4" r="4" fill="brown"/></svg>')
+        4 4,
+      auto;
+  }
+  .custom-cursor-hover {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><circle cx="8" cy="4" r="4" fill="yellow"/></svg>')
+        4 4,
+      auto;
+  }
+}

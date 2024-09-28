@@ -4,6 +4,7 @@ import { db } from "../firebase/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import SuccessDialog from "./SuccessDialog";
 import Loading from "../assets/loading.gif";
+import { Link } from "react-router-dom";
 
 export function Contact() {
   const [fname, setFname] = useState("");
@@ -247,12 +248,12 @@ export function Contact() {
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#blogs"
+                    <Link
+                      to="/blogs"
                       className="font-bold hover:custom-cursor-hover"
                     >
                       Blogs
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -315,8 +316,6 @@ export function Contact() {
       <div className="bg-[#f2eed5] h-full w-full text-center sm:text-[12px] text-[8px] font-bold text-[#6f6b2a] pb-3">
         <p>Designed & Developed with ❤️ by Mohammad Inteshar Alam • 2024</p>
       </div>
-      <div className="bg-[#f2eed5] h-[5px] w-full"></div>
-      <div className="bg-[#f2eed5] h-[5px] w-full"></div>
     </>
   );
 }

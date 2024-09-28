@@ -1,5 +1,5 @@
 import React from "react";
-import photo from "/src/assets/photo.jpg";
+import photo from "../assets/photo.webp";
 
 const About = () => {
   return (

@@ -96,7 +96,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        <Route path="/blogs" element={<Blogs  />} />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="/blogs/:id" element={<BlogDetail />} />
       </Routes>
     </Router>

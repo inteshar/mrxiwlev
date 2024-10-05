@@ -30,6 +30,19 @@ const fetchBlogs = async () => {
     throw error; // Optionally throw the error to be handled elsewhere
   }
 };
+const fetchExp = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, "experiences"));
+    const exp = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+    return exp;
+  } catch (error) {
+    console.error("Error fetching experiences:", error);
+    throw error; // Optionally throw the error to be handled elsewhere
+  }
+};
 
 // Fetch from the "Profile Pic" Firestore collection
 const fetchProfilePic = async () => {
@@ -65,4 +78,5 @@ export {
   fetchBlogById,
   fetchProfilePic,
   fetchProfileSummary,
+  fetchExp,
 };

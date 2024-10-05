@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import photo from "../assets/photo.webp";
+import {
+  fetchProfilePic,
+  fetchProfileSummary,
+} from "../firebase/firestoreQueries";
 
 const About = () => {
+  const [profilePic, setProfilePic] = useState(null);
+  const [loadprofilesummary, setLoadprofilesummary] = useState("");
+
+  useEffect(() => {
+    const loadProfilePic = async () => {
+      try {
+        const fetchedProfilePic = await fetchProfilePic();
+        setProfilePic(fetchedProfilePic);
+      } catch (error) {
+        console.error("Failed to load profile pic:", error);
+      }
+    };
+
+    loadProfilePic();
+  }, []);
+
+  useEffect(() => {
+    const loadProfileSummary = async () => {
+      try {
+        const fetchedProfileSummary = await fetchProfileSummary();
+        setLoadprofilesummary(fetchedProfileSummary);
+      } catch (error) {
+        console.error("Failed to load profile summary:", error);
+      }
+    };
+
+    loadProfileSummary();
+  }, []);
+
   return (
     <>
       <div
@@ -12,8 +45,8 @@ const About = () => {
           <div className="flex max-w-full flex-col items-center rounded-md border md:flex-row bg-[#f9f7ec] drop-shadow-xl">
             <div className="h-full w-full md:h-[200px] md:w-[500px] p-2">
               <img
-                src={photo}
-                alt=""
+                src={profilePic ? profilePic : photo}
+                alt="Image"
                 className="h-full w-full rounded-md object-cover shadow-lg border-2 border-[#e5deb1]"
               />
             </div>
@@ -27,11 +60,7 @@ const About = () => {
                 <p className="text-sm text-gray-600">Doha, Qatar</p>
                 <div className="mt-4">
                   <p className="mt-3 text-sm text-gray-600 text-justify">
-                    A professional with 2 years of experience in Web
-                    Development, holding a degree in Computer Science and
-                    Engineering. Open to every opportunity to apply my knowledge
-                    and skills to contribute to the success of the organization
-                    and advance my career.
+                    {loadprofilesummary}
                   </p>
                 </div>
               </div>

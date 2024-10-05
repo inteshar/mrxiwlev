@@ -36,6 +36,19 @@ const Navbar = () => {
             />
           </Link>
         </li>
+        <li className="hover:bg-gray-300 rounded">
+          <Link
+            to="/dashboard/Profile"
+            className="text-blue-500 hover:underline"
+          >
+            <img
+              width="24"
+              height="24"
+              src="https://img.icons8.com/plumpy/50/user.png"
+              alt="Profile"
+            />
+          </Link>
+        </li>
         <div className="border border-red-600 rounded mx-1 h-5"></div>
         <li className="hover:bg-red-300 rounded">
           <button onClick={handleLogout}>

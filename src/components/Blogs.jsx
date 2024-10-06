@@ -292,7 +292,7 @@ const Blogs = () => {
                 )}
               </div>
               {/* Pagination */}
-              <div className="flex justify-center mt-10">
+              <div className="flex justify-center mt-10 mb-10">
                 <button
                   onClick={() => paginate(currentPage - 1)}
                   className={`hover:custom-cursor-hover hover:text-white duration-500 hover:bg-[#a26398] border border-black px-4 py-2 mx-1 text-gray-500 capitalize bg-white rounded-md cursor-${

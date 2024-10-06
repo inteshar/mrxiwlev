@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import Sidebar from "./components/Sidebar";
@@ -13,6 +13,7 @@ import ProtectedRoute from "./admin/ProtectedRoute";
 import BlogDetail from "./components/BlogDetail"; // Ensure correct path
 import NotFound from "./assets/404.svg";
 import Blogs from "./components/Blogs";
+import loadingIcon from "./assets/loading.gif";
 
 const FadeInSection = ({ children }) => {
   const { ref, inView } = useInView({
@@ -40,29 +41,55 @@ const noSelectStyle = {
 };
 
 const Home = () => {
+  // State for managing loading
+  const [loading, setLoading] = useState(true);
+
+  // Simulate loading time or when everything is ready
+  useEffect(() => {
+    // This will simulate a loading time of 2 seconds (you can replace this with actual data fetching logic)
+    const timer = setTimeout(() => {
+      setLoading(false); // Set loading to false once everything is ready
+    }, 5000);
+
+    // Cleanup timeout
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div
       style={noSelectStyle}
       className="custom-cursor flex items-center max-h-screen font-outfit h-max bg-[#e5deb1] overflow-scroll"
     >
-      <Sidebar />
-      <div className="w-screen h-screen overflow-scroll">
-        <FadeInSection>
-          <Hero />
-        </FadeInSection>
-        <FadeInSection>
-          <About />
-        </FadeInSection>
-        <FadeInSection>
-          <Projects />
-        </FadeInSection>
-        <FadeInSection>
-          <Service />
-        </FadeInSection>
-        <FadeInSection>
-          <Contact />
-        </FadeInSection>
-      </div>
+      {/* Loading Screen */}
+      {loading ? (
+        <div className="w-screen h-screen flex items-center justify-center bg-[#e5deb1]">
+          <p className="text-xl font-bold text-gray-700">
+            <img className="rounded-full" src={loadingIcon} alt="Loading..." />
+          </p>
+        </div>
+      ) : (
+        // Main content after loading is done
+        <>
+          <Sidebar />
+          <div className="w-screen h-screen overflow-scroll">
+            <FadeInSection>
+              <Hero />
+            </FadeInSection>
+            <FadeInSection>
+              <About />
+            </FadeInSection>
+            <FadeInSection>
+              <Projects />
+            </FadeInSection>
+            <FadeInSection>
+              <Service />
+            </FadeInSection>
+            <FadeInSection>
+              <Contact />
+            </FadeInSection>
+          </div>
+        </>
+      )}
     </div>
   );
 };

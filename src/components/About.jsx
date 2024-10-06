@@ -3,6 +3,7 @@ import photo from "../assets/photo.webp";
 import {
   fetchProfilePic,
   fetchProfileSummary,
+  fetchExp,
 } from "../firebase/firestoreQueries";
 
 const About = () => {
@@ -21,6 +22,32 @@ const About = () => {
 
     loadProfilePic();
   }, []);
+
+  const [exp, setExp] = useState([]);
+  useEffect(() => {
+    const loadExp = async () => {
+      try {
+        const fetchedExp = await fetchExp();
+        console.log(fetchedExp);
+        setExp(fetchedExp);
+      } catch (error) {
+        console.error("Failed to load experience:", error);
+      }
+    };
+
+    loadExp();
+  }, []);
+
+  const [expandedRowsExp, setExpandedRowsExp] = useState([]);
+
+  // Toggle the expansion of roles and responsibilities for the selected experience
+  const toggleRowExpansion = (experienceId) => {
+    if (expandedRowsExp.includes(experienceId)) {
+      setExpandedRowsExp(expandedRowsExp.filter((id) => id !== experienceId)); // collapse
+    } else {
+      setExpandedRowsExp([...expandedRowsExp, experienceId]); // expand
+    }
+  };
 
   useEffect(() => {
     const loadProfileSummary = async () => {
@@ -171,41 +198,81 @@ const About = () => {
               Professional Career
             </p>
             <ul className="flex flex-col gap-4">
-              <li className="border-s-2 border-black h-max ps-3 flex justify-between">
-                <div>
-                  <p className="font-bold text-[#6f6b2a] sm:text-lg text-[12px]">
-                    13/07/2022 - 05/03/2024
-                  </p>
-                  <div className="text-sm font-bold text-gray-900">
-                    JD Global Pvt. Ltd., Kathmandu, Nepal
-                  </div>
-                  <p className="sm:text-xl font-bold text-[#6f6b2a]">
-                    Junior Web Developer
-                  </p>
-                  <ul className="text-gray-600 text-sm list-disc w-auto ps-3">
-                    <li>
-                      Developed and maintained responsive web applications using
-                      modern technologies.
-                    </li>
-                    <li>
-                      Collaborated with senior developers to implement features
-                      and troubleshoot issues.
-                    </li>
-                    <li>
-                      Identified and resolved bugs to improve functionality and
-                      user experience.
-                    </li>
-                    <li>
-                      Optimized websites for performance, scalability, and
-                      cross-browser compatibility.
-                    </li>
-                    <li>
-                      Followed coding best practices and stayed updated on
-                      emerging web technologies.
-                    </li>
-                  </ul>
-                </div>
-              </li>
+              {exp.length > 0 ? (
+                exp.map((experience) => (
+                  <li
+                    key={experience.id}
+                    className="border-s-2 border-black h-max ps-3 flex justify-between mb-4"
+                  >
+                    <div>
+                      {/* Date Range */}
+                      <p className="font-bold text-[#6f6b2a] sm:text-lg text-[12px]">
+                        {new Date(
+                          experience.dateFrom.seconds * 1000
+                        ).toLocaleDateString()}{" "}
+                        -{" "}
+                        {typeof experience.dateTo === "string"
+                          ? experience.dateTo
+                          : new Date(
+                              experience.dateTo.seconds * 1000
+                            ).toLocaleDateString()}
+                      </p>
+
+                      {/* Company & Address */}
+                      <div className="text-sm font-bold text-gray-900">
+                        {experience.company}, {experience.address}
+                      </div>
+
+                      {/* Position */}
+                      <p className="sm:text-xl font-bold text-[#6f6b2a]">
+                        {experience.position}
+                      </p>
+
+                      {/* Toggle button to show/hide Roles & Responsibilities */}
+                      <button
+                        className="text-[#6f6b2a] text-sm mt-2 hover:custom-cursor-hover duration-300 flex items-center gap-2"
+                        onClick={() => toggleRowExpansion(experience.id)}
+                      >
+                        Roles & Responsibilities{" "}
+                        {expandedRowsExp.includes(experience.id) ? (
+                          <div>
+                            <img
+                              width="16"
+                              height="16"
+                              src="https://img.icons8.com/ios/50/circled-chevron-down.png"
+                              alt="Hide"
+                            />
+                          </div>
+                        ) : (
+                          <div>
+                            <img
+                              width="16"
+                              height="16"
+                              src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/external-right-arrows-those-icons-lineal-those-icons-5.png"
+                              alt="Show"
+                            />
+                          </div>
+                        )}
+                      </button>
+
+                      {/* Expandable Roles & Responsibilities section */}
+                      {expandedRowsExp.includes(experience.id) && (
+                        <ul className="text-gray-600 text-sm list-disc w-auto ps-3 mt-2">
+                          {experience.rolesResponsibilities
+                            .split("\n")
+                            .map((role, index) => (
+                              <li key={index}>{role}</li>
+                            ))}
+                        </ul>
+                      )}
+                    </div>
+                  </li>
+                ))
+              ) : (
+                <p className="text-center text-gray-600">
+                  No experiences found
+                </p>
+              )}
             </ul>
           </div>
           <div className="bg-[#f9f7ec] p-6 rounded-lg drop-shadow-xl ">

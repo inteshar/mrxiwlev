@@ -24,14 +24,22 @@ const About = () => {
   }, []);
 
   const [exp, setExp] = useState([]);
+
   useEffect(() => {
     const loadExp = async () => {
       try {
-        const fetchedExp = await fetchExp();
-        console.log(fetchedExp);
-        setExp(fetchedExp);
+        const fetchedExp = await fetchExp(); // Fetch blogs from Firebase Realtime Database
+        // Assuming each blog object has a createdAt timestamp in milliseconds
+        const sortedExp = Object.keys(fetchedExp)
+          .map((key) => ({
+            id: key,
+            ...fetchedExp[key],
+          }))
+          .sort((a, b) => b.createdAt - a.createdAt); // Sort directly by the timestamp
+
+        setExp(sortedExp); // Update state with the sorted blogs
       } catch (error) {
-        console.error("Failed to load experience:", error);
+        console.error("Failed to load blogs:", error); // Log error if fetching fails
       }
     };
 

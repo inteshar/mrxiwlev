@@ -196,7 +196,7 @@ const Blogs = () => {
           .sort((a, b) => b.createdAt - a.createdAt); // Sort directly by the timestamp
 
         setBlogs(sortedBlogs); // Update state with the sorted blogs
-        setLoading(false);
+        setLoading(!loading);
       } catch (error) {
         console.error("Failed to load blogs:", error); // Log error if fetching fails
       }

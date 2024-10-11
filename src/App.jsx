@@ -63,7 +63,7 @@ const Home = () => {
       {loading ? (
         <div className="h-screen w-screen text-center text-gray-700 flex flex-col gap-3 items-center justify-center">
           <span className="loading loading-spinner loading-sm"></span>
-          <p className="text-center">Loading...</p>
+          <p className="text-center font-bold">Loading...</p>
         </div>
       ) : (
         // Main content after loading is done

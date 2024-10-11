@@ -13,7 +13,6 @@ import ProtectedRoute from "./admin/ProtectedRoute";
 import BlogDetail from "./components/BlogDetail"; // Ensure correct path
 import NotFound from "./assets/404.svg";
 import Blogs from "./components/Blogs";
-import loadingIcon from "./assets/loading.gif";
 
 const FadeInSection = ({ children }) => {
   const { ref, inView } = useInView({
@@ -62,10 +61,9 @@ const Home = () => {
     >
       {/* Loading Screen */}
       {loading ? (
-        <div className="w-screen h-screen flex items-center justify-center bg-[#e5deb1]">
-          <p className="text-xl font-bold text-gray-700">
-            <img className="rounded-full" src={loadingIcon} alt="Loading..." />
-          </p>
+        <div className="h-screen w-screen text-center text-gray-700 flex flex-col gap-3 items-center justify-center">
+          <span className="loading loading-spinner loading-sm"></span>
+          <p className="text-center">Loading...</p>
         </div>
       ) : (
         // Main content after loading is done

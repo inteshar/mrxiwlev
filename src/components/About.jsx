@@ -95,7 +95,13 @@ const About = () => {
                 <p className="text-sm text-gray-600">Doha, Qatar</p>
                 <div className="mt-4">
                   <p className="mt-3 text-sm text-gray-600 text-justify">
-                    {loadprofilesummary}
+                    {loadprofilesummary ? (
+                      loadprofilesummary
+                    ) : (
+                      <div className="text-center text-gray-700 flex items-center justify-center">
+                        <span className="loading loading-spinner loading-sm"></span>
+                      </div>
+                    )}
                   </p>
                 </div>
               </div>
@@ -277,9 +283,9 @@ const About = () => {
                   </li>
                 ))
               ) : (
-                <p className="text-center text-gray-600">
-                  No experiences found
-                </p>
+                <div className="text-center text-gray-700 flex items-center justify-center">
+                  <span className="loading loading-spinner loading-sm"></span>
+                </div>
               )}
             </ul>
           </div>

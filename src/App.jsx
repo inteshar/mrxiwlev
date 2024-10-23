@@ -67,22 +67,42 @@ const Home = () => {
       style={noSelectStyle}
       className="custom-cursor flex items-center max-h-screen font-outfit h-max bg-[#e5deb1] overflow-scroll"
     >
-      {/* Loading Screen */}
       {loading ? (
-        <div className="h-screen w-screen text-center text-gray-700 flex flex-col gap-3 items-center justify-center">
-          <span className="loading loading-spinner loading-sm text-blue-800"></span>
-          <p className="text-center font-semibold px-5">
-            {randomVerse.text}
-            <br />
-            <span className="text-blue-800">
-              <em>
-                Qur'an - {randomVerse.surah}:{randomVerse.ayah}
-              </em>
-            </span>
-          </p>
+        <div className="h-screen w-screen bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-sky-50 via-white to-blue-100 flex flex-col gap-6 items-center justify-center p-4 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-sky-100 rounded-full filter blur-3xl opacity-30 translate-y-1/2 -translate-x-1/2" />
+
+          <div className="max-w-3xl w-full rounded-2xl bg-white/70 backdrop-blur-md shadow-2xl p-12 relative">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+
+            <div className="relative flex justify-center items-center">
+              <span className="loading loading-spinner loading-sm text-blue-800" />
+            </div>
+
+            <div className="mt-8 space-y-8">
+              <p className="text-center font-semibold text-2xl text-gray-700 leading-relaxed px-5 font-serif">
+                {randomVerse.text}
+              </p>
+
+              <div className="flex flex-col items-center gap-4">
+                <div className="flex items-center justify-center gap-4 w-full">
+                  <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
+                  <span className="text-blue-800 font-medium text-lg">
+                    <em>
+                      Qur'an - {randomVerse.surah}:{randomVerse.ayah}
+                    </em>
+                  </span>
+                  <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+          </div>
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_50%,transparent,rgba(0,0,0,0.03))]" />
         </div>
       ) : (
-        // Main content after loading is done
         <>
           <Sidebar />
           <div className="w-screen h-screen overflow-scroll">

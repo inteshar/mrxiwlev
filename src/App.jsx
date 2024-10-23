@@ -13,6 +13,7 @@ import ProtectedRoute from "./admin/ProtectedRoute";
 import BlogDetail from "./components/BlogDetail"; // Ensure correct path
 import NotFound from "./assets/404.svg";
 import Blogs from "./components/Blogs";
+import verses from "../src/Quran.json";
 
 const FadeInSection = ({ children }) => {
   const { ref, inView } = useInView({
@@ -42,16 +43,23 @@ const noSelectStyle = {
 const Home = () => {
   // State for managing loading
   const [loading, setLoading] = useState(true);
+  const [randomVerse, setRandomVerse] = useState("");
 
-  // Simulate loading time or when everything is ready
   useEffect(() => {
-    // This will simulate a loading time of 2 seconds (you can replace this with actual data fetching logic)
+    // Set a random verse from the JSON file
+    const randomIndex = Math.floor(Math.random() * verses.length);
+    const selectedVerse = verses[randomIndex];
+    setRandomVerse({
+      text: selectedVerse.text,
+      surah: selectedVerse.surah,
+      ayah: selectedVerse.ayah,
+    });
+    // Simulate loading time (you can replace this with real data fetching logic)
     const timer = setTimeout(() => {
       setLoading(false); // Set loading to false once everything is ready
     }, 5000);
 
-    // Cleanup timeout
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer); // Cleanup
   }, []);
 
   return (
@@ -62,8 +70,16 @@ const Home = () => {
       {/* Loading Screen */}
       {loading ? (
         <div className="h-screen w-screen text-center text-gray-700 flex flex-col gap-3 items-center justify-center">
-          <span className="loading loading-spinner loading-sm"></span>
-          <p className="text-center font-bold">Loading...</p>
+          <span className="loading loading-spinner loading-sm text-blue-800"></span>
+          <p className="text-center font-semibold px-5">
+            {randomVerse.text}
+            <br />
+            <span className="text-blue-800">
+              <em>
+                Qur'an - {randomVerse.surah}:{randomVerse.ayah}
+              </em>
+            </span>
+          </p>
         </div>
       ) : (
         // Main content after loading is done
@@ -107,6 +123,22 @@ const Page404 = () => {
 };
 
 const App = () => {
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/service-worker.js").then(
+        (registration) => {
+          console.log(
+            "ServiceWorker registration successful with scope: ",
+            registration.scope
+          );
+        },
+        (err) => {
+          console.log("ServiceWorker registration failed: ", err);
+        }
+      );
+    });
+  }
+
   return (
     <Router>
       <Routes>

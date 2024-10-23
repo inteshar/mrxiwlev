@@ -75,8 +75,15 @@ const Home = () => {
           <div className="max-w-3xl w-full rounded-2xl bg-white/70 backdrop-blur-md shadow-2xl p-12 relative">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
 
-            <div className="relative flex justify-center items-center">
-              <span className="loading loading-spinner loading-sm text-blue-800" />
+            <div className="absolute top-0 left-0 w-16 h-16 border-l-4 border-t-4 border-blue-200 rounded-tl-2xl" />
+            <div className="absolute top-0 right-0 w-16 h-16 border-r-4 border-t-4 border-blue-200 rounded-tr-2xl" />
+            <div className="absolute bottom-0 left-0 w-16 h-16 border-l-4 border-b-4 border-blue-200 rounded-bl-2xl" />
+            <div className="absolute bottom-0 right-0 w-16 h-16 border-r-4 border-b-4 border-blue-200 rounded-br-2xl" />
+
+            <div className="relative flex justify-center items-center mb-8">
+              <div className="absolute w-12 h-12 rounded-full border-2 border-blue-100 animate-ping" />
+              <div className="absolute w-12 h-12 rounded-full border-2 border-blue-200 animate-pulse" />
+              <span className="loading loading-spinner loading-md text-blue-800 relative z-10" />
             </div>
 
             <div className="mt-8 space-y-8">

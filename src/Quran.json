@@ -14,211 +14,313 @@
   {
     "surah": 3,
     "ayah": 139,
-    "text": "So do not lose heart nor fall into despair, for you will be superior if you are true in faith."
+    "text": "So do not lose heart nor fall into despair, for you will be superior if you are true in faith.",
+    "arabic": "فَلَا تَهِنُوا وَلَا تَحْزَنُوا وَأَنتُمُ الْأَعْلَوْنَ إِن كُنتُم مُّؤْمِنِينَ"
   },
   {
     "surah": 16,
     "ayah": 97,
-    "text": "Whoever does righteousness, whether male or female, while he is a believer – We will surely cause him to live a good life."
+    "text": "Whoever does righteousness, whether male or female, while he is a believer – We will surely cause him to live a good life.",
+    "arabic": "مَنْ عَمِلَ صَالِحًا مِّن ذَكَرٍ أَوْ أُنثَىٰ وَهُوَ مُؤْمِنٌ فَلَنُحْيِيَنَّهُۥ حَيَوٰةً طَيِّبَةًۭ ۖ"
   },
   {
     "surah": 94,
     "ayah": "5-6",
-    "text": "For indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease."
+    "text": "For indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease.",
+    "arabic": "فَإِنَّ مَعَ ٱلْعُسْرِ يُسْرًا إِنَّ مَعَ ٱلْعُسْرِ يُسْرًۭا"
   },
   {
     "surah": 2,
     "ayah": 153,
-    "text": "O you who have believed, seek help through patience and prayer. Indeed, Allah is with the patient."
+    "text": "O you who have believed, seek help through patience and prayer. Indeed, Allah is with the patient.",
+    "arabic": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱسْتَعِينُوا۟ بِٱلصَّبْرِ وَٱلصَّلَوٰةِ ۚ إِنَّ ٱللَّهَ مَعَ ٱلصَّـٰبِرِينَ"
   },
   {
     "surah": 8,
     "ayah": 46,
-    "text": "And obey Allah and His Messenger, and do not dispute and [thus] lose courage, and [then] your strength would depart."
+    "text": "And obey Allah and His Messenger, and do not dispute and [thus] lose courage, and [then] your strength would depart.",
+    "arabic": "وَأَطِيعُوا۟ ٱللَّهَ وَرَسُولَهُۥ وَلَا تَنَـٰزَعُوا۟ فَتَفْشَلُوا۟ وَتَذْهَبَ رِيحُكُمْ ۖ"
   },
   {
     "surah": 3,
     "ayah": 200,
-    "text": "O you who have believed, persevere and endure and remain stationed and fear Allah that you may be successful."
+    "text": "O you who have believed, persevere and endure and remain stationed and fear Allah that you may be successful.",
+    "arabic": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱصْبِرُوا۟ وَصَابِرُوا۟ وَرَابِطُوا۟ وَٱتَّقُوا۟ ٱللَّهَ لَعَلَّكُمْ تُفْلِحُونَ"
   },
   {
     "surah": 29,
     "ayah": 69,
-    "text": "And those who strive for Us – We will surely guide them to Our ways. And indeed, Allah is with the doers of good."
+    "text": "And those who strive for Us – We will surely guide them to Our ways. And indeed, Allah is with the doers of good.",
+    "arabic": "وَٱلَّذِينَ جَـٰهَدُوا۟ فِينَا لَنَهْدِيَنَّهُمْ سُبُلَنَا ۚ وَإِنَّ ٱللَّهَ لَمَعَ ٱلْمُحْسِنِينَ"
   },
   {
     "surah": 40,
     "ayah": 60,
-    "text": "And your Lord says, Call upon Me; I will respond to you."
+    "text": "And your Lord says, Call upon Me; I will respond to you.",
+    "arabic": "وَقَالَ رَبُّكُمُ ٱدْعُونِىٓ أَسْتَجِبْ لَكُمْ ۚ"
   },
   {
     "surah": 39,
     "ayah": 53,
-    "text": "Say, O My servants who have transgressed against themselves [by sinning], do not despair of the mercy of Allah."
+    "text": "Say, O My servants who have transgressed against themselves [by sinning], do not despair of the mercy of Allah.",
+    "arabic": "قُلْ يَـٰعِبَادِىَ ٱلَّذِينَ أَسْرَفُوا۟ عَلَىٰٓ أَنفُسِهِمْ لَا تَقْنَطُوا۟ مِن رَّحْمَةِ ٱللَّهِ ۚ"
   },
   {
     "surah": 2,
     "ayah": 286,
-    "text": "Our Lord, do not impose blame upon us if we forget or make a mistake."
+    "text": "Our Lord, do not impose blame upon us if we forget or make a mistake.",
+    "arabic": "رَبَّنَا لَا تُؤَاخِذْنَآ إِن نَّسِينَآ أَوْ أَخْطَأْنَا"
   },
   {
     "surah": 14,
     "ayah": 7,
-    "text": "And [remember] when your Lord proclaimed, 'If you are grateful, I will surely increase you [in favor]; but if you deny, indeed, My punishment is severe.'"
+    "text": "And [remember] when your Lord proclaimed, 'If you are grateful, I will surely increase you [in favor]; but if you deny, indeed, My punishment is severe.'",
+    "arabic": "وَإِذْ تَأَذَّنَ رَبُّكُمْ لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ وَلَئِن كَفَرْتُمْ إِنَّ عَذَابِى لَشَدِيدٌۭ"
   },
   {
     "surah": 94,
     "ayah": "7-8",
-    "text": "So when you have finished [your duties], then stand up [for worship]. And to your Lord direct [your] longing."
+    "text": "So when you have finished [your duties], then stand up [for worship]. And to your Lord direct [your] longing.",
+    "arabic": "فَإِذَا فَرَغْتَ فَٱنصَبْ وَإِلَىٰ رَبِّكَ فَٱرْغَبْ"
   },
   {
     "surah": 47,
     "ayah": 7,
-    "text": "O you who have believed, if you support Allah, He will support you and plant firmly your feet."
+    "text": "O you who have believed, if you support Allah, He will support you and plant firmly your feet.",
+    "arabic": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوٓا۟ إِن تَنصُرُوا۟ ٱللَّهَ يَنصُرْكُمْ وَيُثَبِّتْ أَقْدَامَكُمْ"
   },
   {
     "surah": 31,
     "ayah": 22,
-    "text": "And whoever submits his face to Allah while he is a doer of good – then he has grasped the most trustworthy handhold."
+    "text": "And whoever submits his face to Allah while he is a doer of good – then he has grasped the most trustworthy handhold.",
+    "arabic": "وَمَن يُسْلِمْ وَجْهَهُۥٓ إِلَى ٱللَّهِ وَهُوَ مُحْسِنٌۭ فَقَدِ ٱسْتَمْسَكَ بِٱلْعُرْوَةِ ٱلثُّقْبَىٰ"
   },
   {
     "surah": 9,
     "ayah": 51,
-    "text": "Say, 'Never will we be struck except by what Allah has decreed for us; He is our protector.'"
+    "text": "Say, 'Never will we be struck except by what Allah has decreed for us; He is our protector.'",
+    "arabic": "قُل لَّن يُصِيبَنَآ إِلَّا مَا كَتَبَ ٱللَّهُ لَنَا هُوَ مَوْلَىٰنَا ۚ"
   },
   {
     "surah": 39,
     "ayah": 38,
-    "text": "Is not Allah sufficient for His Servant? Yet they threaten you with those they worship other than Him."
+    "text": "Is not Allah sufficient for His Servant? Yet they threaten you with those they worship other than Him.",
+    "arabic": "أَلَيْسَ ٱللَّهُ بِكَافٍ عَبْدَهُۥ ۖ وَيُخَوِّفُونَكَ بِٱلَّذِينَ مِن دُونِهِۦ"
   },
   {
     "surah": 4,
     "ayah": 79,
-    "text": "Whatever of good reaches you, is from Allah, but whatever of evil befalls you, is from yourself."
-  },
-  {
-    "surah": 94,
-    "ayah": 6,
-    "text": "Indeed, with hardship [will be] ease."
+    "text": "Whatever good reaches you is from Allah, but whatever evil befalls you is from yourself.",
+    "arabic": "مَّآ أَصَابَكَ مِنْ حَسَنَةٍۢ فَمِنَ ٱللَّهِ ۖ وَمَآ أَصَابَكَ مِن سَيِّئَةٍۢ فَمِن نَّفْسِكَ"
   },
   {
     "surah": 64,
     "ayah": 11,
-    "text": "No disaster strikes except by permission of Allah. And whoever believes in Allah – He will guide his heart."
+    "text": "No disaster strikes except by permission of Allah. And whoever believes in Allah – He will guide his heart.",
+    "arabic": "مَآ أَصَابَ مِن مُّصِيبَةٍ إِلَّا بِإِذْنِ ٱللَّهِ ۗ وَمَن يُؤْمِنۢ بِٱللَّهِ يَهْدِ قَلْبَهُۥ"
   },
   {
-    "surah": 65,
-    "ayah": 4,
-    "text": "And whoever fears Allah – He will make for him of his matter ease."
+    "surah": 25,
+    "ayah": 63,
+    "text": "And the servants of the Most Merciful are those who walk upon the earth easily, and when the ignorant address them, they say [words of] peace.",
+    "arabic": "وَعِبَادُ ٱلرَّحْمَـٰنِ ٱلَّذِينَ يَمْشُونَ عَلَى ٱلْأَرْضِ هَوْنًۭا وَإِذَا خَاطَبَهُمُ ٱلْجَـٰهِلُونَ قَالُوا۟ سَلَـٰمًۭا"
   },
   {
-    "surah": 57,
-    "ayah": 11,
-    "text": "Who is it that would loan Allah a goodly loan so He may multiply it for him?"
-  },
-  {
-    "surah": 9,
-    "ayah": 41,
-    "text": "Go forth, whether light or heavy, and strive with your wealth and your lives in the cause of Allah."
-  },
-  {
-    "surah": 8,
-    "ayah": 30,
-    "text": "But they plan, and Allah plans. And Allah is the best of planners."
-  },
-  {
-    "surah": 28,
-    "ayah": 70,
-    "text": "And He is Allah; there is no deity except Him. To Him is [due all] praise in the first [life] and the Hereafter."
-  },
-  {
-    "surah": 93,
-    "ayah": 4,
-    "text": "And the Hereafter is better for you than the first [life]."
+    "surah": 21,
+    "ayah": 87,
+    "text": "There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers.",
+    "arabic": "لَآ إِلَـٰهَ إِلَّآ أَنتَ سُبْحَـٰنَكَ إِنِّى كُنتُ مِنَ ٱلظَّـٰلِمِينَ"
   },
   {
     "surah": 2,
-    "ayah": 45,
-    "text": "And seek help through patience and prayer, and indeed, it is difficult except for the humbly submissive [to Allah]."
+    "ayah": 286,
+    "text": "Our Lord, do not impose blame upon us if we forget or make a mistake.",
+    "arabic": "رَبَّنَا لَا تُؤَاخِذْنَآ إِن نَّسِينَآ أَوْ أَخْطَأْنَا"
   },
   {
-    "surah": 33,
-    "ayah": 3,
-    "text": "And rely upon Allah; and sufficient is Allah as Disposer of affairs."
+    "surah": 2,
+    "ayah": 152,
+    "text": "So remember Me; I will remember you. And be grateful to Me and do not deny Me.",
+    "arabic": "فَٱذْكُرُونِىٓ أَذْكُرْكُمْ وَٱشْكُرُوا۟ لِى وَلَا تَكْفُرُونِ"
   },
   {
-    "surah": 16,
-    "ayah": 128,
-    "text": "Indeed, Allah is with those who fear Him and those who are doers of good."
-  },
-  {
-    "surah": 18,
+    "surah": 39,
     "ayah": 10,
-    "text": "Our Lord, grant us from Yourself mercy and prepare for us from our affair right guidance."
+    "text": "Indeed, the patient will be given their reward without account.",
+    "arabic": "إِنَّمَا يُوَفَّى ٱلصَّـٰبِرُونَ أَجْرَهُم بِغَيْرِ حِسَابٍۢ"
   },
   {
-    "surah": 20,
-    "ayah": 114,
-    "text": "My Lord, increase me in knowledge."
-  },
-  {
-    "surah": 27,
-    "ayah": 62,
-    "text": "Is He [not best] who responds to the desperate one when he calls upon Him and removes evil?"
-  },
-  {
-    "surah": 29,
-    "ayah": 69,
-    "text": "And those who strive for Us – We will surely guide them to Our ways. And indeed, Allah is with the doers of good."
-  },
-  {
-    "surah": 10,
-    "ayah": 12,
-    "text": "And when affliction touches man, he calls upon Us, whether lying on his side or sitting or standing."
-  },
-  {
-    "surah": 40,
-    "ayah": 51,
-    "text": "Indeed, We will support Our messengers and those who believe during the life of this world and on the Day when the witnesses will stand."
-  },
-  {
-    "surah": 33,
-    "ayah": 56,
-    "text": "Indeed, Allah confers blessing upon the Prophet, and His angels [ask Him to do so]."
+    "surah": 23,
+    "ayah": 96,
+    "text": "Repel evil by that [deed] which is better.",
+    "arabic": "ٱدْفَعْ بِٱلَّتِى هِىَ أَحْسَنُ ٱلسَّيِّئَةَ"
   },
   {
     "surah": 14,
     "ayah": 34,
-    "text": "And He gave you from all you asked of Him. And if you should count the favor of Allah, you could not enumerate them."
+    "text": "And He gave you from all you asked of Him. And if you should count the favor of Allah, you could not enumerate them.",
+    "arabic": "وَءَاتَىٰكُم مِّن كُلِّ مَا سَأَلْتُمُوهُ ۚ وَإِن تَعُدُّوا۟ نِعْمَةَ ٱللَّهِ لَا تُحْصُوهَآ"
+  },
+  {
+    "surah": 13,
+    "ayah": 28,
+    "text": "Unquestionably, by the remembrance of Allah hearts are assured.",
+    "arabic": "أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ"
   },
   {
     "surah": 4,
-    "ayah": 86,
-    "text": "And when you are greeted with a greeting, greet in return with one better than it or [at least] return it [in a like manner]."
+    "ayah": 36,
+    "text": "Worship Allah and associate nothing with Him, and to parents do good.",
+    "arabic": "وَٱعْبُدُوا۟ ٱللَّهَ وَلَا تُشْرِكُوا۟ بِهِۦ شَيْـًۭٔا وَبِٱلْوَٰلِدَيْنِ إِحْسَـٰنًۭا"
+  },
+  {
+    "surah": 3,
+    "ayah": 145,
+    "text": "And whoever desires the reward of this world – We will give him thereof; and whoever desires the reward of the Hereafter – We will give him thereof.",
+    "arabic": "وَمَن يُرِدْ ثَوَابَ ٱلدُّنْيَا نُؤْتِهِۦ مِنْهَا وَمَن يُرِدْ ثَوَابَ ٱلْـَٔاخِرَةِ نُؤْتِهِۦ مِنْهَا"
+  },
+  {
+    "surah": 39,
+    "ayah": 18,
+    "text": "Who listen to speech and follow the best of it.",
+    "arabic": "ٱلَّذِينَ يَسْتَمِعُونَ ٱلْقَوْلَ فَيَتَّبِعُونَ أَحْسَنَهُۥٓ"
   },
   {
     "surah": 2,
     "ayah": 177,
-    "text": "Righteousness is not that you turn your faces toward the east or the west, but [true] righteousness is in one who believes in Allah."
+    "text": "Righteousness is not that you turn your faces toward the east or the west, but [true] righteousness is in one who believes in Allah.",
+    "arabic": "لَّيْسَ ٱلْبِرَّ أَن تُوَلُّوا۟ وُجُوهَكُمْ قِبَلَ ٱلْمَشْرِقِ وَٱلْمَغْرِبِ وَلَـٰكِنَّ ٱلْبِرَّ مَنْ ءَامَنَ بِٱللَّهِ"
   },
   {
-    "surah": 5,
-    "ayah": 2,
-    "text": "Help one another in acts of righteousness and piety, but do not help one another in sin and transgression."
+    "surah": 41,
+    "ayah": 34,
+    "text": "And not equal are the good deed and the bad. Repel [evil] by that [deed] which is better.",
+    "arabic": "وَلَا تَسْتَوِى ٱلْحَسَنَةُ وَلَا ٱلسَّيِّئَةُ ۚ ٱدْفَعْ بِٱلَّتِى هِىَ أَحْسَنُ"
+  },
+  {
+    "surah": 49,
+    "ayah": 13,
+    "text": "Indeed, the most noble of you in the sight of Allah is the most righteous of you.",
+    "arabic": "إِنَّ أَكْرَمَكُمْ عِندَ ٱللَّهِ أَتْقَىٰكُمْ"
+  },
+  {
+    "surah": 16,
+    "ayah": 90,
+    "text": "Indeed, Allah orders justice and good conduct and giving to relatives and forbids immorality and bad conduct and oppression.",
+    "arabic": "إِنَّ ٱللَّهَ يَأْمُرُ بِٱلْعَدْلِ وَٱلْإِحْسَـٰنِ وَإِيتَآءِ ذِى ٱلْقُرْبَىٰ وَيَنْهَىٰ عَنِ ٱلْفَحْشَآءِ وَٱلْمُنكَرِ وَٱلْبَغْىِ"
+  },
+  {
+    "surah": 35,
+    "ayah": 32,
+    "text": "Then We caused to inherit the Scripture those We have chosen of Our servants.",
+    "arabic": "ثُمَّ أَوْرَثْنَا ٱلْكِتَـٰبَ ٱلَّذِينَ ٱصْطَفَيْنَا مِنْ عِبَادِنَا"
+  },
+  {
+    "surah": 6,
+    "ayah": 160,
+    "text": "Whoever comes [on the Day of Judgement] with a good deed will have ten times the like thereof.",
+    "arabic": "مَن جَآءَ بِٱلْحَسَنَةِ فَلَهُۥ عَشْرُ أَمْثَـٰلِهَا"
   },
   {
     "surah": 93,
-    "ayah": "6-8",
-    "text": "Did He not find you an orphan and give [you] refuge? And He found you lost and guided [you]."
+    "ayah": 4,
+    "text": "And the Hereafter is better for you than the first [life].",
+    "arabic": "وَلَلْـَٔاخِرَةُ خَيْرٌۭ لَّكَ مِنَ ٱلْأُولَىٰ"
   },
   {
-    "surah": 29,
-    "ayah": 45,
-    "text": "Recite, [O Muhammad], what has been revealed to you of the Book and establish prayer. Indeed, prayer prohibits immorality and wrongdoing."
+    "surah": 2,
+    "ayah": 286,
+    "text": "Our Lord, and lay not upon us a burden like that which You laid upon those before us.",
+    "arabic": "رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَآ إِصْرًۭا كَمَا حَمَلْتَهُۥ عَلَى ٱلَّذِينَ مِن قَبْلِنَا"
   },
   {
-    "surah": 3,
-    "ayah": 104,
-    "text": "And let there be [arising] from you a nation inviting to [all that is] good, enjoining what is right and forbidding what is wrong."
+    "surah": 31,
+    "ayah": 19,
+    "text": "And be moderate in your pace and lower your voice.",
+    "arabic": "وَٱقْصِدْ فِى مَشْيِكَ وَٱغْضُضْ مِن صَوْتِكَ"
+  },
+  {
+    "surah": 49,
+    "ayah": 11,
+    "text": "Let not a people ridicule [another] people; perhaps they may be better than them.",
+    "arabic": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا يَسْخَرْ قَوْمٌۭ مِّن قَوْمٍ عَسَىٰٓ أَن يَكُونُوا۟ خَيْرًۭا مِّنْهُمْ"
+  },
+  {
+    "surah": 24,
+    "ayah": 21,
+    "text": "But Allah purifies whom He wills, and Allah is Hearing and Knowing.",
+    "arabic": "وَلَـٰكِنَّ ٱللَّهَ يُزَكِّى مَن يَشَآءُ ۗ وَٱللَّهُ سَمِيعٌ عَلِيمٌۭ"
+  },
+  {
+    "surah": 22,
+    "ayah": 77,
+    "text": "O you who have believed, bow and prostrate and worship your Lord and do good – that you may succeed.",
+    "arabic": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱرْكَعُوا۟ وَٱسْجُدُوا۟ وَٱعْبُدُوا۟ رَبَّكُمْ وَٱفْعَلُوا۟ ٱلْخَيْرَ لَعَلَّكُمْ تُفْلِحُونَ"
+  },
+  {
+    "surah": 16,
+    "ayah": 18,
+    "text": "And if you should count the favors of Allah, you could not enumerate them.",
+    "arabic": "وَإِن تَعُدُّوا۟ نِعْمَةَ ٱللَّهِ لَا تُحْصُوهَآ"
+  },
+  {
+    "surah": 65,
+    "ayah": 2,
+    "text": "And whoever fears Allah – He will make for him a way out.",
+    "arabic": "وَمَن يَتَّقِ ٱللَّهَ يَجْعَل لَّهُۥ مَخْرَجًۭا"
+  },
+  {
+    "surah": 57,
+    "ayah": 11,
+    "text": "Who is it that would loan Allah a goodly loan so He may multiply it for him?",
+    "arabic": "مَّن ذَا ٱلَّذِى يُقْرِضُ ٱللَّهَ قَرْضًا حَسَنًۭا فَيُضَـٰعِفَهُۥ لَهُۥ"
+  },
+  {
+    "surah": 7,
+    "ayah": 31,
+    "text": "O children of Adam, take your adornment at every masjid.",
+    "arabic": "يَـٰبَنِىٓ ءَادَمَ خُذُوا۟ زِينَتَكُمْ عِندَ كُلِّ مَسْجِدٍۢ"
+  },
+  {
+    "surah": 39,
+    "ayah": 54,
+    "text": "And return [in repentance] to your Lord and submit to Him.",
+    "arabic": "وَأَنِيبُوٓا۟ إِلَىٰ رَبِّكُمْ وَأَسْلِمُوا۟ لَهُۥ"
+  },
+  {
+    "surah": 57,
+    "ayah": 20,
+    "text": "Know that the life of this world is but amusement and diversion and adornment and boasting to one another and competition in increase of wealth and children.",
+    "arabic": "ٱعْلَمُوٓا۟ أَنَّمَا ٱلْحَيَوٰةُ ٱلدُّنْيَا لَعِبٌۭ وَلَهْوٌۭ وَزِينَةٌۭ وَتَفَاخُرٌۭ بَيْنَكُمْ وَتَكَاثُرٌۭ فِى ٱلْأَمْوَٰلِ وَٱلْأَوْلَـٰدِ"
+  },
+  {
+    "surah": 94,
+    "ayah": 6,
+    "text": "Indeed, with hardship [will be] ease.",
+    "arabic": "إِنَّ مَعَ ٱلْعُسْرِ يُسْرًا"
+  },
+  {
+    "surah": 5,
+    "ayah": 8,
+    "text": "Be persistently standing firm for Allah, witnesses in justice.",
+    "arabic": "كُونُوا۟ قَوَّٰمِينَ لِلَّهِ شُهَدَآءَ بِٱلْقِسْطِ"
+  },
+  {
+    "surah": 31,
+    "ayah": 18,
+    "text": "And do not turn your cheek [in contempt] toward people and do not walk through the earth exultantly.",
+    "arabic": "وَلَا تُصَعِّرْ خَدَّكَ لِلنَّاسِ وَلَا تَمْشِ فِى ٱلْأَرْضِ مَرَحًا"
+  },
+  {
+    "surah": 49,
+    "ayah": 12,
+    "text": "O you who have believed, avoid much [negative] assumption. Indeed, some assumption is sin.",
+    "arabic": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ ٱجْتَنِبُوا۟ كَثِيرًۭا مِّنَ ٱلظَّنِّ إِنَّ بَعْضَ ٱلظَّنِّ إِثْمٌۭ"
+  },
+  {
+    "surah": 40,
+    "ayah": 60,
+    "text": "Call upon Me; I will respond to you.",
+    "arabic": "ٱدْعُونِىٓ أَسْتَجِبْ لَكُمْ"
   }
 ]

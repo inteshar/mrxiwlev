@@ -88,11 +88,11 @@ const Home = () => {
             </div>
 
             <div className="mt-8 space-y-8">
-              <p className="text-center font-semibold text-2xl text-gray-700 leading-relaxed px-5 font-serif">
+              <p className="text-center font-semibold text-sm sm:text-2xl text-gray-700 leading-relaxed px-5 font-serif">
                 {randomVerse.text}
               </p>
-              <p className="text-center font-semibold text-2xl text-gray-700 leading-relaxed px-5 font-serif">
-                {randomVerse.arabic}
+              <p className="text-center font-semibold text-sm sm:text-2xl text-gray-700 leading-relaxed px-5 font-serif">
+                ﴾ {randomVerse.arabic} ﴿
               </p>
 
               <div className="flex flex-col items-center gap-4">

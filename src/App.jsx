@@ -58,7 +58,7 @@ const Home = () => {
     // Simulate loading time (you can replace this with real data fetching logic)
     const timer = setTimeout(() => {
       setLoading(false); // Set loading to false once everything is ready
-    }, 5000);
+    }, 6000);
 
     return () => clearTimeout(timer); // Cleanup
   }, []);

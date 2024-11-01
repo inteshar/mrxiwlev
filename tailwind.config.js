@@ -6,7 +6,7 @@ export default {
       backgroundImage: {
         "hero-bg": "url('/src/assets/bg1.svg')",
         "about-bg": "url('/src/assets/photo.png')",
-        "contact-bg": "url('/src/assets/bg3.png')",
+        "contact-bg": "url('/src/assets/bg3.webp')",
       },
       whitespace: {
         "pre-wrap": "pre-wrap", // Add this line

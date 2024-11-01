@@ -223,15 +223,25 @@ const Blogs = () => {
 
   return (
     <>
-      <div className="bg-white h-auto w-screen custom-cursor">
+      <style>
+        {`
+                .hide-scrollbar {
+                    scrollbar-width: none; 
+                }
+                .hide-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+                `}
+      </style>
+      <div className="custom-cursor max-h-screen font-outfit h-max bg-white overflow-scroll hide-scrollbar">
         <Navbar searchQuery={searchQuery} handleSearch={handleSearch} />
 
-        <div className="w-screen min-h-screen flex flex-col items-center justify-evenly gap-4 sm:p-4">
+        <div className="flex flex-col items-center justify-evenly gap-4 sm:p-4">
           <section className="w-screen sm:p-5">
             <div className="container mx-auto">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 {loading ? (
-                  <div className="-mt-96 text-center text-gray-700 w-screen flex items-center justify-center">
+                  <div className="-mt-96 text-center text-gray-700 h-screen w-screen flex items-center justify-center">
                     <span className="loading loading-spinner loading-lg"></span>
                   </div>
                 ) : currentBlogs.length > 0 ? ( // Check if there are blogs to display

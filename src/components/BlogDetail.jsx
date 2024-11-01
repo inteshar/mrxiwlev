@@ -219,7 +219,7 @@ const BlogDetail = () => {
       </style>
 
       <Navbar />
-      <div className="flex sm:flex-row flex-col justify-evenly bg-white h-max sm:max-h-[80vh] sm:overflow-y-hidden w-screen custom-cursor p-6">
+      <div className="flex sm:flex-row flex-col justify-evenly bg-white h-max sm:max-h-[80vh] sm:overflow-y-hidden custom-cursor p-6 no-scrollbar">
         <div className="text-black sm:w-[65vw] sm:h-[75vh] sm:overflow-y-auto no-scrollbar">
           {loading ? (
             <div className="text-gray-700 flex justify-center">

@@ -66,7 +66,7 @@ const Home = () => {
   return (
     <div
       style={noSelectStyle}
-      className="custom-cursor flex items-center max-h-screen font-outfit h-max bg-[#e5deb1] overflow-scroll"
+      className="custom-cursor flex items-center max-h-screen font-outfit h-max bg-[#e5deb1] overflow-scroll hide-scrollbar"
     >
       {loading ? (
         <div className="h-screen w-screen bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-sky-50 via-white to-blue-100 flex flex-col gap-6 items-center justify-center p-4 relative overflow-hidden">
@@ -116,7 +116,7 @@ const Home = () => {
       ) : (
         <>
           <Sidebar />
-          <div className="w-screen h-screen overflow-scroll">
+          <div className="w-screen h-screen overflow-scroll hide-scrollbar">
             <FadeInSection>
               <Hero />
             </FadeInSection>

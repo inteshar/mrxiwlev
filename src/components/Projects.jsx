@@ -224,7 +224,7 @@ const Projects = () => {
                   </p>
                 </details>
               </div>
-              <hr />
+              <hr className="hidden sm:block" />
             </li>
             <li>
               <hr className="hidden sm:block" />

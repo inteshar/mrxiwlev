@@ -94,13 +94,14 @@ const Projects = () => {
                     <li>
                       <a
                         href="http://owncd.infinityfreeapp.com/?i=1"
-                        className="hover:custom-cursor-hover"
+                        className="hover:custom-cursor-hover text-[#6f6b2a] rounded-sm flex gap-1 justify-center items-center"
                         target="_blank"
                       >
+                        Live Demo
                         <img
-                          width="24"
-                          height="24"
-                          src="https://img.icons8.com/3d-fluency/94/link.png"
+                          width="12"
+                          height="12"
+                          src="https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/external-share-ui-anggara-basic-outline-anggara-putra.png"
                           alt="github"
                         />
                       </a>
@@ -197,13 +198,14 @@ const Projects = () => {
                     <li>
                       <a
                         href="https://apkpure.com/password-generator/com.passwordgenerator"
-                        className="hover:custom-cursor-hover"
+                        className="hover:custom-cursor-hover text-[#6f6b2a] rounded-sm flex gap-1 justify-center items-center"
                         target="_blank"
                       >
+                        Live Demo
                         <img
-                          width="24"
-                          height="24"
-                          src="https://img.icons8.com/3d-fluency/94/link.png"
+                          width="12"
+                          height="12"
+                          src="https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/external-share-ui-anggara-basic-outline-anggara-putra.png"
                           alt="github"
                         />
                       </a>
@@ -297,13 +299,14 @@ const Projects = () => {
                     <li>
                       <a
                         href="https://roomrentalms.vercel.app/"
-                        className="hover:custom-cursor-hover"
+                        className="hover:custom-cursor-hover text-[#6f6b2a] rounded-sm flex gap-1 justify-center items-center"
                         target="_blank"
                       >
+                        Live Demo
                         <img
-                          width="24"
-                          height="24"
-                          src="https://img.icons8.com/3d-fluency/94/link.png"
+                          width="12"
+                          height="12"
+                          src="https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/external-share-ui-anggara-basic-outline-anggara-putra.png"
                           alt="github"
                         />
                       </a>

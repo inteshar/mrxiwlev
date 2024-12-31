@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -9,12 +9,14 @@ export default {
         "contact-bg": "url('/src/assets/bg3.webp')",
       },
       whitespace: {
-        "pre-wrap": "pre-wrap", // Add this line
+        "pre-wrap": "pre-wrap",
       },
     },
     fontFamily: {
       outfit: ["Outfit", "sans-serif"],
     },
   },
-  plugins: [require("daisyui")],
-};
+  plugins: [
+    require("daisyui")
+  ],
+}

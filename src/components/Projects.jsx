@@ -336,7 +336,7 @@ const Projects = () => {
                     </li>
                     <li>
                       <a
-                        href="http://owncd.infinityfreeapp.com/?i=1"
+                        href="http://devofgroup.42web.io/?i=1"
                         className="hover:custom-cursor-hover text-[#6f6b2a] rounded-sm flex gap-1 justify-center items-center"
                         target="_blank"
                       >

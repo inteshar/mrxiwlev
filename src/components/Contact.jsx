@@ -184,7 +184,7 @@ export function Contact() {
                       href="mailto:intesharalam01@gmail.com"
                       className="hover:custom-cursor-hover"
                     >
-                      intesharalam01@gmail.com
+                      er.mohammadalam@gmail.com
                     </a>
                     <br />
                     <a

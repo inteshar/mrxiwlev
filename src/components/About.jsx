@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import photo from "../assets/photo.webp";
+import photo from "../assets/photo.png";
 import {
   fetchProfilePic,
   fetchProfileSummary,
@@ -28,18 +28,17 @@ const About = () => {
   useEffect(() => {
     const loadExp = async () => {
       try {
-        const fetchedExp = await fetchExp(); // Fetch blogs from Firebase Realtime Database
-        // Assuming each blog object has a createdAt timestamp in milliseconds
+        const fetchedExp = await fetchExp();
         const sortedExp = Object.keys(fetchedExp)
           .map((key) => ({
             id: key,
             ...fetchedExp[key],
           }))
-          .sort((a, b) => b.createdAt - a.createdAt); // Sort directly by the timestamp
+          .sort((a, b) => b.createdAt - a.createdAt);
 
-        setExp(sortedExp); // Update state with the sorted blogs
+        setExp(sortedExp);
       } catch (error) {
-        console.error("Failed to load blogs:", error); // Log error if fetching fails
+        console.error("Failed to load blogs:", error);
       }
     };
 
@@ -51,9 +50,9 @@ const About = () => {
   // Toggle the expansion of roles and responsibilities for the selected experience
   const toggleRowExpansion = (experienceId) => {
     if (expandedRowsExp.includes(experienceId)) {
-      setExpandedRowsExp(expandedRowsExp.filter((id) => id !== experienceId)); // collapse
+      setExpandedRowsExp(expandedRowsExp.filter((id) => id !== experienceId));
     } else {
-      setExpandedRowsExp([...expandedRowsExp, experienceId]); // expand
+      setExpandedRowsExp([...expandedRowsExp, experienceId]);
     }
   };
 
@@ -82,7 +81,7 @@ const About = () => {
               <img
                 src={profilePic ? profilePic : photo}
                 alt="Image"
-                className="h-full w-full rounded-md object-cover shadow-lg border-2 border-[#e5deb1]"
+                className="h-full w-full object-cover drop-shadow-lg"
               />
             </div>
             <div>
@@ -219,7 +218,6 @@ const About = () => {
                     className="border-s-2 border-black h-max ps-3 flex justify-between mb-4"
                   >
                     <div>
-                      {/* Date Range */}
                       <p className="font-bold text-[#6f6b2a] sm:text-lg text-[12px]">
                         {new Date(
                           experience.dateFrom.seconds * 1000
@@ -232,17 +230,14 @@ const About = () => {
                             ).toLocaleDateString()}
                       </p>
 
-                      {/* Company & Address */}
                       <div className="text-sm font-bold text-gray-900">
                         {experience.company}, {experience.address}
                       </div>
 
-                      {/* Position */}
                       <p className="sm:text-xl font-bold text-[#6f6b2a]">
                         {experience.position}
                       </p>
 
-                      {/* Toggle button to show/hide Roles & Responsibilities */}
                       <button
                         className="text-[#6f6b2a] text-sm mt-2 hover:custom-cursor-hover duration-300 flex items-center gap-2"
                         onClick={() => toggleRowExpansion(experience.id)}
@@ -269,7 +264,6 @@ const About = () => {
                         )}
                       </button>
 
-                      {/* Expandable Roles & Responsibilities section */}
                       {expandedRowsExp.includes(experience.id) && (
                         <ul className="text-gray-600 text-sm list-disc w-auto ps-3 mt-2">
                           {experience.rolesResponsibilities

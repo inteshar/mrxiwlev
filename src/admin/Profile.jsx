@@ -12,7 +12,7 @@ import {
   fetchProfileSummary,
   fetchExp,
 } from "../firebase/firestoreQueries";
-import Photo from "../assets/photo.webp";
+import Photo from "../assets/photo.png";
 
 const ProfilePic = () => {
   const [imagePreview, setImagePreview] = useState(null);

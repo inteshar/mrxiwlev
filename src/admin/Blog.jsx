@@ -4,6 +4,7 @@ import "react-quill/dist/quill.snow.css";
 import { db } from "../firebase/firebase";
 import { collection, addDoc, deleteDoc, doc } from "firebase/firestore";
 import { fetchBlogs } from "../firebase/firestoreQueries";
+import { Loader } from "lucide-react";
 
 const Blog = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,6 +21,7 @@ const Blog = () => {
   const [blogCategory, setBlogCategory] = useState("");
   const [selectedBlogs, setSelectedBlogs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(false);
   const blogsPerPage = 10;
 
   const handleDelete = async () => {
@@ -79,6 +81,7 @@ const Blog = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     try {
       const blogsCollection = collection(db, "blogs");
       await addDoc(blogsCollection, {
@@ -93,9 +96,11 @@ const Blog = () => {
       setBlogContent("");
       setImagePreview(null);
       alert("Blog posted successfully!");
+      setLoading(false);
     } catch (error) {
       console.error("Error adding document: ", error);
       alert("Failed to post blog.");
+      setLoading(false);
     }
   };
 
@@ -386,12 +391,18 @@ const Blog = () => {
                   >
                     Cancel
                   </button>
-                  <button
-                    type="submit"
-                    className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-                  >
-                    Post Blog
-                  </button>
+                  {loading ? (
+                    <div className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 flex justify-center items-center">
+                      <Loader className="animate-spin" />
+                    </div>
+                  ) : (
+                    <button
+                      type="submit"
+                      className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                    >
+                      Post Blog
+                    </button>
+                  )}
                 </div>
               </div>
               <div className="mb-4 flex justify-center items-center gap-10">
@@ -400,6 +411,7 @@ const Blog = () => {
                   className="file-input file-input-bordered file-input-xs w-full max-w-xs bg-white"
                   accept="image/*"
                   onChange={handleImageChange}
+                  required
                 />
                 {imagePreview && (
                   <img
@@ -420,6 +432,7 @@ const Blog = () => {
                   placeholder="Enter blog title"
                   value={blogTitle}
                   onChange={(e) => setBlogTitle(e.target.value)}
+                  required
                 />
               </div>
 
@@ -431,6 +444,7 @@ const Blog = () => {
                   className="text-black mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   value={blogCategory}
                   onChange={(e) => setBlogCategory(e.target.value)}
+                  required
                 >
                   <option value="">Select a category</option>
                   <option value="Technology">Technology</option>
@@ -556,6 +570,7 @@ const Blog = () => {
                         container: "#toolbar-container", // Linking the toolbar container to the editor
                       },
                     }}
+                    required
                     formats={Blog.formats} // Ensuring correct formats are allowed
                     className="text-black"
                     style={{

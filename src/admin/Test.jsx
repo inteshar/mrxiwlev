@@ -6,7 +6,6 @@ const handleLogin = async (e) => {
   e.preventDefault();
   try {
     await signInWithEmailAndPassword(auth, email, password);
-    // Redirect to a different page or show success message
   } catch (err) {
     setError(err.message);
   }

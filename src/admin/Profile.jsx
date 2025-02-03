@@ -13,10 +13,12 @@ import {
   fetchExp,
 } from "../firebase/firestoreQueries";
 import Photo from "../assets/photo.png";
+import { Loader } from "lucide-react";
 
 const ProfilePic = () => {
   const [imagePreview, setImagePreview] = useState(null);
   const [profilePic, setProfilePic] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -44,37 +46,36 @@ const ProfilePic = () => {
 
   const handleSubmitProfilePic = async (event) => {
     event.preventDefault();
-
+    setLoading(true);
     if (!imagePreview) {
       alert("Please select an image.");
+      setLoading(false);
       return;
     }
 
     try {
       const profilePicCollection = collection(db, "profilepic");
 
-      // Step 1: Get all documents in the profilepic collection
       const querySnapshot = await getDocs(profilePicCollection);
 
-      // Step 2: Delete each document in the collection
       const deletePromises = querySnapshot.docs.map((docSnapshot) =>
         deleteDoc(doc(db, "profilepic", docSnapshot.id))
       );
 
-      // Wait for all deletions to complete
       await Promise.all(deletePromises);
 
-      // Step 3: Add new image to the collection
       await addDoc(profilePicCollection, {
         image: imagePreview,
         createdAt: new Date(),
       });
 
       setImagePreview(null);
+      setLoading(false);
       alert("Profile pic updated successfully!");
     } catch (error) {
       console.error("Error updating profile pic: ", error);
       alert("Failed to update profile pic.", error);
+      setLoading(false);
     }
   };
 
@@ -117,12 +118,18 @@ const ProfilePic = () => {
                 />
               )}
             </div>
-            <button
-              type="submit"
-              className="bg-orange-400 text-black px-5 h-10 rounded-lg"
-            >
-              Confirm
-            </button>
+            {loading ? (
+              <div className="bg-orange-400 text-black px-5 h-10 w-20 rounded-lg flex justify-center items-center">
+                <Loader className="animate-spin" />
+              </div>
+            ) : (
+              <button
+                type="submit"
+                className="bg-orange-400 text-black px-5 h-10 rounded-lg"
+              >
+                Confirm
+              </button>
+            )}
           </form>
         </div>
       </div>
@@ -133,10 +140,10 @@ const ProfilePic = () => {
 const ProfileSummary = () => {
   const [profilesummary, setProfilesummary] = useState("");
   const [loadprofilesummary, setLoadprofilesummary] = useState("");
+  const [loading, setLoading] = useState(false);
   const handleSubmitProfileSummary = async (event) => {
     event.preventDefault();
-
-    // Ensure that profile summary is not empty before submission
+    setLoading(true);
     if (!profilesummary.trim()) {
       alert("Please enter a profile summary.");
       return;
@@ -145,31 +152,28 @@ const ProfileSummary = () => {
     try {
       const profileSummaryCollection = collection(db, "profilesummary");
 
-      // Step 1: Get all documents in the profilesummary collection
       const querySnapshot = await getDocs(profileSummaryCollection);
 
-      // Step 2: Check if the collection is not empty and delete each document
       if (!querySnapshot.empty) {
         const deletePromises = querySnapshot.docs.map((docSnapshot) =>
           deleteDoc(doc(db, "profilesummary", docSnapshot.id))
         );
 
-        // Wait for all deletions to complete
         await Promise.all(deletePromises);
       }
 
-      // Step 3: Add the new profile summary to the collection
       await addDoc(profileSummaryCollection, {
-        summary: profilesummary.trim(), // Store the profile summary text
-        createdAt: new Date(), // Confirm the current date and time
+        summary: profilesummary.trim(),
+        createdAt: new Date(),
       });
 
-      // Clear the input and alert success
-      setProfilesummary(""); // Clear the input field
+      setProfilesummary("");
+      setLoading(false);
       alert("Profile summary updated successfully!");
     } catch (error) {
       console.error("Error updating profile summary: ", error);
       alert("Failed to update profile summary.");
+      setLoading(false);
     }
   };
 
@@ -205,32 +209,40 @@ const ProfileSummary = () => {
           onChange={(e) => setProfilesummary(e.target.value)}
           value={profilesummary}
         ></textarea>
-        <button className="w-full my-3 bg-orange-400 text-black px-5 h-10 rounded-lg">
-          Confirm
-        </button>
+        {loading ? (
+          <div className="w-full my-3 bg-orange-400 text-black px-5 h-10 w-20 rounded-lg flex justify-center items-center">
+            <Loader className="animate-spin" />
+          </div>
+        ) : (
+          <button className="w-full my-3 bg-orange-400 text-black px-5 h-10 rounded-lg">
+            Confirm
+          </button>
+        )}
       </form>
     </div>
   );
 };
 
-const Education = () => {
+const Experience = () => {
   const [position, setPosition] = useState("");
   const [company, setCompany] = useState("");
+  const [companyUrl, setCompanyUrl] = useState("");
   const [dateFrom, setDateFrom] = useState("");
   const [dateTo, setDateTo] = useState("");
   const [address, setAddress] = useState("");
   const [rolesResponsibilities, setRolesResponsibilities] = useState("");
   const [exp, setExp] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const handleExperienceSubmit = async (event) => {
     event.preventDefault();
-
-    // Validate form data
+    setLoading(true);
     if (
       !position ||
       !company ||
       !dateFrom ||
       !address ||
+      !companyUrl ||
       !rolesResponsibilities
     ) {
       alert("Please fill in all fields.");
@@ -238,23 +250,23 @@ const Education = () => {
     }
 
     try {
-      // Add new experience to Firestore
       const experiencesCollection = collection(db, "experiences");
       await addDoc(experiencesCollection, {
         position: position,
         company: company,
-        dateFrom: new Date(dateFrom), // convert to Date object
-        dateTo: dateTo ? new Date(dateTo) : "Present", // Use "Present" if dateTo is empty
+        dateFrom: new Date(dateFrom),
+        dateTo: dateTo ? new Date(dateTo) : "Present",
         address: address,
         rolesResponsibilities: rolesResponsibilities,
+        url: companyUrl,
         createdAt: new Date(),
       });
 
       alert("Experience added successfully!");
-
-      // Clear form inputs after successful submission
+      setLoading(false);
       setPosition("");
       setCompany("");
+      setCompanyUrl("");
       setDateFrom("");
       setDateTo("");
       setAddress("");
@@ -262,6 +274,7 @@ const Education = () => {
     } catch (error) {
       console.error("Error adding experience: ", error);
       alert("Failed to add experience.");
+      setLoading(false);
     }
   };
 
@@ -327,7 +340,6 @@ const Education = () => {
     }
   };
 
-  // Delete selected experiences
   // Delete selected experiences with confirmation
   const deleteSelectedExperiences = async () => {
     if (
@@ -385,6 +397,17 @@ const Education = () => {
               required
             />
           </div>
+          <div className="flex flex-col">
+            <p className="text-xs font-bold">Company URL</p>
+            <input
+              type="text"
+              placeholder="Company URL"
+              className="input input-bordered w-full bg-white border-gray-400 text-black"
+              onChange={(e) => setCompanyUrl(e.target.value)}
+              value={companyUrl}
+              required
+            />
+          </div>
           <div className="flex gap-3">
             <div className="w-2/4 flex flex-col">
               <p className="text-xs font-bold">From</p>
@@ -429,9 +452,15 @@ const Education = () => {
               placeholder="Roles & Responsibilities"
             ></textarea>
           </div>
-          <button className="w-full my-3 bg-orange-400 text-black px-5 h-10 rounded-lg">
-            Confirm
-          </button>
+          {loading ? (
+            <div className="w-full my-3 bg-orange-400 text-black px-5 h-10 rounded-lg flex justify-center items-center">
+              <Loader className="animate-spin" />
+            </div>
+          ) : (
+            <button className="w-full my-3 bg-orange-400 text-black px-5 h-10 rounded-lg">
+              Confirm
+            </button>
+          )}
         </form>
 
         <div className="overflow-x-auto overflow-y-auto w-full sm:w-4/6 min-h-full sm:flex-grow">
@@ -503,6 +532,10 @@ const Education = () => {
                       : "↓"
                     : ""}
                 </th>
+                <th onClick={() => sortExp("url")} className="cursor-pointer">
+                  URL{" "}
+                  {sortField === "url" ? (sortOrder === "asc" ? "↑" : "↓") : ""}
+                </th>
                 <th
                   onClick={() => sortExp("rolesResponsibilities")}
                   className="cursor-pointer"
@@ -556,6 +589,15 @@ const Education = () => {
                         }
                       </td>
                       <td>{experience.address}</td>
+                      <td>
+                        <a
+                          href={experience.url}
+                          target="_blank"
+                          className="text-blue-500 hover:underline duration-300"
+                        >
+                          {experience.company}
+                        </a>
+                      </td>
                       <td>
                         <button
                           className="btn btn-link text-blue-500"
@@ -654,6 +696,10 @@ const Education = () => {
                       : "↓"
                     : ""}
                 </th>
+                <th onClick={() => sortExp("url")} className="cursor-pointer">
+                  URL{" "}
+                  {sortField === "url" ? (sortOrder === "asc" ? "↑" : "↓") : ""}
+                </th>
                 <th
                   onClick={() => sortExp("rolesResponsibilities")}
                   className="cursor-pointer"
@@ -691,7 +737,7 @@ const Profile = () => {
       </p>
       <ProfilePic />
       <ProfileSummary />
-      <Education />
+      <Experience />
     </div>
   );
 };

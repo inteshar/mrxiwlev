@@ -81,7 +81,7 @@ const About = () => {
               <img
                 src={profilePic ? profilePic : photo}
                 alt="Image"
-                className="h-full w-full object-cover drop-shadow-lg"
+                className="h-full w-full object-cover drop-shadow-xl"
               />
             </div>
             <div>
@@ -230,9 +230,31 @@ const About = () => {
                             ).toLocaleDateString()}
                       </p>
 
-                      <div className="text-sm font-bold text-gray-900">
-                        {experience.company}, {experience.address}
-                      </div>
+                      <p className="text-sm font-bold text-gray-900 flex items-center">
+                        {experience.company}, {experience.address}{" "}
+                        <a
+                          href={experience.url}
+                          target="_blank"
+                          className="mx-2 hover:custom-cursor-hover duration-300 text-[#6f6b2a]"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-square-arrow-out-up-right"
+                          >
+                            <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6" />
+                            <path d="m21 3-9 9" />
+                            <path d="M15 3h6v6" />
+                          </svg>
+                        </a>
+                      </p>
 
                       <p className="sm:text-xl font-bold text-[#6f6b2a]">
                         {experience.position}

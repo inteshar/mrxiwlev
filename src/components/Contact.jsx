@@ -3,8 +3,8 @@ import logo from "../assets/logo.png";
 import { db } from "../firebase/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import SuccessDialog from "./SuccessDialog";
-import Loading from "../assets/loading.gif";
 import { Link } from "react-router-dom";
+import { Loader } from "lucide-react";
 
 export function Contact() {
   const [fname, setFname] = useState("");
@@ -76,7 +76,7 @@ export function Contact() {
                   </p>
                   <form
                     onSubmit={(e) => {
-                      e.preventDefault(); // Prevent default form submission
+                      e.preventDefault();
                       handleSubmit(e);
                       setLoading(true);
                     }}
@@ -134,7 +134,7 @@ export function Contact() {
                         id="message"
                         placeholder="Leave me a message"
                         cols={3}
-                        rows={5} // Adjust rows for better UX
+                        rows={5}
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         required
@@ -145,12 +145,7 @@ export function Contact() {
                       className="flex justify-center hover:custom-cursor-hover w-full rounded-md bg-black px-3 py-2 text-sm font-semibold text-white drop-shadow-xl hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                     >
                       {loading ? (
-                        <img
-                          className="rounded-full"
-                          src={Loading}
-                          height={24}
-                          width={24}
-                        />
+                        <Loader className="animate-spin" size={24} />
                       ) : (
                         "Send Message"
                       )}

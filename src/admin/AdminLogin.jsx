@@ -3,15 +3,18 @@ import { ArrowRight } from "lucide-react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
+import { Loader } from "lucide-react";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
@@ -20,10 +23,12 @@ const AdminLogin = () => {
       );
       console.log("User logged in:", userCredential.user);
       setError("Logged in successfully");
-      navigate("/dashboard"); // Redirect to dashboard or another page
+      setLoading(false);
+      navigate("/dashboard");
     } catch (error) {
       console.error("Error logging in:", error);
       setError("Failed to log in. Please check your email and password.");
+      setLoading(false);
     }
   };
   return (
@@ -85,12 +90,18 @@ const AdminLogin = () => {
                   </div>
                   <div>
                     {error && <p className="error-message">{error}</p>}
-                    <button
-                      type="submit"
-                      className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
-                    >
-                      Login <ArrowRight className="ml-2" size={16} />
-                    </button>
+                    {loading ? (
+                      <div className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80">
+                        <Loader className="animate-spin" size={24} />
+                      </div>
+                    ) : (
+                      <button
+                        type="submit"
+                        className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
+                      >
+                        Login <ArrowRight className="ml-2" size={16} />
+                      </button>
+                    )}
                   </div>
                 </div>
               </form>

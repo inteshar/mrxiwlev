@@ -93,8 +93,3 @@ The production files will be generated in the `dist` directory.
 ---
 
 Feel free to contribute or reach out if you have any questions!
-
-```
-
-This README provides clear instructions on how to set up and run your project, as well as where to make modifications. Let me know if you need any adjustments!
-```
